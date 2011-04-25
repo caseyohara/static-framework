@@ -387,12 +387,12 @@ a.hover-box:hover img.hover {
 	/* =Header
 ------------------------------------------------------------ */
 
-#header strong {
+#header strong.logo {
 	position: relative;
 	float: left;
 }
 
-#header strong a {
+#header strong.logo a {
 	display: block;
 	width: 100%;
 	height: 100%;
