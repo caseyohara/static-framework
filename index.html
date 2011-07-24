@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 
-<!--[if lt IE 7]><html class="no-js old ie6" lang="en"><![endif]-->
-<!--[if IE 7]><html class="no-js old ie7" lang="en"><![endif]-->
-<!--[if IE 8]><html class="no-js old ie8" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!--[if lt IE 7]><html class="ie ie6" lang="en"><![endif]-->
+<!--[if IE 7]><html class="ie ie7" lang="en"><![endif]-->
+<!--[if IE 8]><html class="ie ie8" lang="en"><![endif]-->
+<!--[if IE 9]><html class="ie ie9" lang="en"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
 <head>
   <title>Page Title Here &mdash; Site Name</title>
 
@@ -13,6 +14,7 @@
 
   <!-- Stylesheets -->
   <link href="/css/style.css" rel="stylesheet"/>
+
 
   <!-- Shortcut Icons -->
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
@@ -58,7 +60,7 @@
   <div id="content" class="autoclear">
     <div id="main">
       <h1>Kitchen Sink</h1>
-      <p>Morbi rhoncus adipiscing libero, <strong>sed varius nunc pellentesque eu</strong>. Quisque sit amet molestie leo. <a href="#">Integer et ultricies turpis</a>. Ut pellentesque nisi vel nisi cursus sed lacinia mauris lacinia. Fusce ultrices, <em>nulla non hendrerit semper</em>, velit enim gravida magna, sed lacinia dolor nisi molestie ipsum. Sed ligula purus, sagittis a euismod congue, tempor vel arcu.</p>
+      <p>Morbi rhoncus H<sub>2</sub>O adipiscing libero<sup>TM</sup>, <strong>sed varius nunc pellentesque eu</strong>. Quisque sit amet molestie leo. <a href="#">Integer et ultricies turpis</a>. Ut pellentesque nisi vel nisi cursus sed lacinia mauris lacinia. Fusce ultrices, <em>nulla non hendrerit semper</em>, velit enim gravida magna, sed lacinia dolor nisi molestie ipsum. Sed ligula purus, sagittis a euismod congue, tempor vel arcu.</p>
 
       <h2>Cras lobortis enim sed purus</h2>
       <p>Aliquam rhoncus vehicula congue. Etiam pharetra laoreet risus, <code>at porta erat mattis non</code>. Pellentesque ut convallis metus. Pellentesque ultricies dui et dui scelerisque sollicitudin. Donec scelerisque urna imperdiet <a href="#">mauris commodo eu imperdiet</a> metus hendrerit. Nam a turpis sed sapien interdum tempus. Nullam rhoncus tincidunt orci vel fringilla.</p>
@@ -79,13 +81,11 @@
       </ul>
 
       <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent ultrices, metus ac molestie venenatis, elit erat suscipit ante, at dictum nulla augue ut lorem.</p>
-      <pre><code>
-        #header h1 a {
-          display: block;
-          width: 300px;
-          height: 80px;
-        }
-      </code></pre>
+<pre><code>#header h1 a {
+  display: block;
+  width: 300px;
+  height: 80px;
+}</code></pre>
 
       <h4>Morbi pellentesque iaculis tortor</h4>
       <p>Aliquam sodales sem a enim sodales ultricies. Donec mattis eleifend semper. Quisque id metus quis lectus blandit mattis semper non sem. Morbi a erat ipsum. Vestibulum blandit, diam pellentesque semper vehicula, eros nisl iaculis sapien, eget blandit magna neque vel nisl.</p>
@@ -147,7 +147,7 @@
 
       <h1>Forms</h1>
       <form>
-        <fieldset>
+        <fieldset class="pulled">
           <legend>Sign up for a new account</legend>
           <p>
             <label class="outer" for="first-name">First Name <sup>*</sup></label>
@@ -199,12 +199,18 @@
 
           <p>
             <label class="outer" for="radio-example">Radio buttons</label>
-            <span class="radcheck"><input type="radio" name="radio-example-1" id="radio-example-1"/>
-                <label for="radio-example-1">Radio one</label></span>
-            <span class="radcheck"><input type="radio" name="radio-example-2"/>
-                <label for="radio-example-2">Radio two</label></span>
-            <span class="radcheck"><input type="radio" name="radio-example-3"/>
-                <label for="radio-example-3">Radio three</label></span>
+            <span class="radcheck">
+              <input type="radio" name="radio-example-1" id="radio-example-1"/>
+              <label for="radio-example-1">Radio one</label>
+            </span>
+            <span class="radcheck">
+              <input type="radio" name="radio-example-2"/>
+              <label for="radio-example-2">Radio two</label>
+            </span>
+            <span class="radcheck">
+              <input type="radio" name="radio-example-3"/>
+              <label for="radio-example-3">Radio three</label>
+            </span>
             <span class="error" style="">Required Field</span>
           </p>
 
@@ -251,8 +257,8 @@
   </div><!-- end footer -->
 
   <!-- jQuery -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write("<script src='/scripts/jquery/jquery-1.6.1.min.js'>\x3C/script>")</script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write("<script src='/scripts/jquery/jquery-1.6.2.min.js'>\x3C/script>")</script>
 
   <!-- jQuery Plugins -->
   <script src="/scripts/jquery/plugins/jquery.cookie.js"></script>
@@ -269,11 +275,5 @@
 
   <!-- Giddy Up -->
   <script src="/scripts/init.js"></script>
-
-  <script>
-    $(document).ready(function() {
-      $('html').removeClass('no-js');
-    });
-  </script>
 </body>
 </html>

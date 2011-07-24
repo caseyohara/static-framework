@@ -15,6 +15,12 @@
 ------------------------------------------------------------ */
 
 
+/* =Import External CSS Files
+------------------------------------------------------------ */
+
+/* @import url('/path/to/file.css'); */
+
+
 /* =Eric Meyer Reset v2.0 (2011-01-26)
 ------------------------------------------------------------ */
 
@@ -185,6 +191,20 @@ p {
   padding-bottom: 15px;
 }
 
+sub, sup { /* Position subscript and superscript content without affecting line-height: gist.github.com/413930 */
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
 #main blockquote {
   padding: 0 20px 0 30px;
   font-style: italic;
@@ -192,12 +212,12 @@ p {
 }
 
 #main ul {
-  padding: 0 0 10px 30px;
+  padding: 0 0 10px 15px;
 }
 
 #main ul li {
-  padding: 0 0 5px 0;
-  list-style: disc outside;
+  padding: 0 0 5px 15px;
+  background: url('/images/icons/bullet.png') left 6px no-repeat;
 }
 
 #main ul ul {
@@ -206,7 +226,7 @@ p {
 }
 
 #main ul ul li {
-  list-style-type: circle;
+  background-image: url('/images/icons/bullet-inner.png');
 }
 
 #main ol {
@@ -232,6 +252,13 @@ p {
   font-family: 'Andale Mono', 'Lucida Console', monospace;
 }
 
+#main pre { /* Allows preformatted text to soft wrap */
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin-bottom: 15px;
+}
+
 .spacer {
   padding-top: 15px;
 }
@@ -245,9 +272,10 @@ select {
   color: #222;
 }
 
-input.inactive {
-  color: #a9a9a9;
-}
+/* You have to specify each browser individually, because they will ignore rules with unknown selectors: bit.ly/ga3vXh */
+input.inactive                   { color: #a9a9a9; }
+input::-webkit-input-placeholder { color: #a9a9a9; }
+input:-moz-placeholder           { color: #a9a9a9; }
 
 img,
 a img {
@@ -306,8 +334,6 @@ a.hover-box:hover img.hover {
 #main table {
   width: 100%;
   margin-bottom: 15px;
-  border-collapse: collapse;
-  border-spacing: 0;
 }
 
 #main table th {
@@ -339,82 +365,52 @@ a.hover-box:hover img.hover {
   /* =Forms
 ------------------------------------------------------------ */
 
-#main fieldset legend {
-  font-size: 14px;
-  font-weight: bold;
-  padding-bottom: 18px;
-}
+    /* =Generic
+------------------------------------------------------------ */
 
-#main fieldset p {
-  padding: 0 0 15px 150px;
-  position: relative;
-  clear: left;
-  zoom: 1; /* Fixes and IE bug that causes text to jump that has a negative margin */
-}
-
-#main fieldset p label {
-  line-height: normal; /* Used to normalize the height between labels and inputs in Firefox */
-}
-
-#main fieldset p label.inner { /* Be sure to mirror the padding and borders of inputs to have a consistent height */
-  display: inline-block;
-  position: relative;
-  padding: 4px 0;
-}
-
-#main fieldset p label.outer {
-  float: left;
-  text-align: right;
-  width: 140px;
-  padding: 4px 0;
-  margin-left: -150px;
-}
-
-#main fieldset p label sup { /* Used to indicate a required field */
-  color: #f00;
-}
-
-#main fieldset p input[type=text],
-#main fieldset p input[type=password],
-#main fieldset p input.text,
-#main fieldset p textarea,
-#main fieldset p select {
-  border: 1px solid #bbb;
+#main input[type=text],
+#main input[type=password],
+#main input.text,
+#main textarea,
+#main select {
+  border: 1px solid #999;
+  border-right-color: #ddd;
+  border-bottom-color: #ddd;
   width: 292px;
   padding: 3px;
   background-color: #fff;
 }
 
-#main fieldset p input.small {
+#main input.small {
   width: 120px;
 }
 
-#main fieldset p input[type=text]:focus,
-#main fieldset p input[type=password]:focus,
-#main fieldset p input.text:focus,
-#main fieldset p textarea:focus,
-#main fieldset p select:focus {
+#main input[type=text]:focus,
+#main input[type=password]:focus,
+#main input.text:focus,
+#main textarea:focus,
+#main select:focus {
   border-color: #666;
 }
 
-#main fieldset p textarea {
+#main textarea {
   height: 175px;
 }
 
-#main fieldset p span.radcheck {
+#main span.radcheck {
   display: block;
 }
 
-#main fieldset p span.radcheck input {
+#main span.radcheck input {
   margin: 0 2px 0 0;
 }
 
-#main fieldset p select { /* Dropdown width and padding is inconsistent with regular inputs */
+#main select { /* Dropdown width and padding is inconsistent with regular inputs */
   width: 300px;
   padding: 2px;
 }
 
-#main fieldset p input.submit { /* Text based input button */
+#main input.submit { /* Text based input button */
   padding: 5px 10px;
   border: 1px solid #a2adb4;
   -webkit-border-radius: 5px;
@@ -425,16 +421,59 @@ a.hover-box:hover img.hover {
 }
 
 
-#main fieldset p input.submit-button,
-#main fieldset p input[type="image"] { /* Image based input button */
+#main input.submit-button,
+#main input[type="image"] { /* Image based input button */
   float: left;
 }
 
-#main fieldset p em.info {
+
+    /* =Fieldsets
+------------------------------------------------------------ */
+
+#main fieldset legend {
+  font-size: 14px;
+  font-weight: bold;
+  padding-bottom: 18px;
+}
+
+
+      /* =Pulled Labels
+------------------------------------------------------------ */
+
+#main fieldset.pulled p {
+  padding: 0 0 15px 150px;
+  position: relative;
+  clear: left;
+  zoom: 1; /* Fixes and IE bug that causes text to jump that has a negative margin */
+}
+
+#main fieldset.pulled p label {
+  line-height: normal; /* Used to normalize the height between labels and inputs in Firefox */
+}
+
+#main fieldset.pulled p label.inner { /* Be sure to mirror the padding and borders of inputs to have a consistent height */
+  display: inline-block;
+  position: relative;
+  padding: 4px 0;
+}
+
+#main fieldset.pulled p label.outer {
+  float: left;
+  text-align: right;
+  width: 140px;
+  padding: 4px 0;
+  margin-left: -150px;
+}
+
+#main fieldset.pulled p label sup { /* Used to indicate a required field */
+  color: #f00;
+}
+
+#main fieldset.pulled p em.info {
   padding-left: 10px;
 }
 
-#main fieldset span.error {
+#main fieldset.pulled span.error {
   position: absolute;
   left: 460px; /* Width of label (150) + input (300) + 10 pixels of space */
   top: 0;
@@ -460,7 +499,7 @@ a.hover-box:hover img.hover {
 .autoclear       { display: block; }
 
 
-/* =Layout and Function
+/* =Layout
 ------------------------------------------------------------ */
 
   /* =Header
@@ -533,19 +572,16 @@ a.hover-box:hover img.hover {
 /* =IE Fixes
 ------------------------------------------------------------ */
 
-/*
-.old {  }
+/* Supports targeting all versions of IE (6-9), or individual versions */
+.ie  {  }
 .ie6 {  }
 .ie7 {  }
 .ie8 {  }
-*/
+.ie9 {  }
 
-
-/* =Import External CSS Files
------------------------------------------------------------- */
-
-/* @import url('/path/to/file.css'); */
-
+.ie #main fieldset.pulled p {
+  zoom: 1; /* Fixes and IE bug that causes text to jump that has a negative margin */
+}
 
 
 /* =Print
