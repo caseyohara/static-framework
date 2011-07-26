@@ -217,7 +217,7 @@ sub {
 
 #main ul li {
   padding: 0 0 5px 15px;
-  background: url('/images/icons/bullet.png') left 6px no-repeat;
+  background: url('/images/icons/bullet.png') left 5px no-repeat;
 }
 
 #main ul ul {
