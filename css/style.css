@@ -368,11 +368,11 @@ a.hover-box:hover img.hover {
     /* =Generic
 ------------------------------------------------------------ */
 
-#main input[type=text],
-#main input[type=password],
-#main input.text,
-#main textarea,
-#main select {
+fieldset input[type=text],
+fieldset input[type=password],
+fieldset input.text,
+fieldset textarea,
+fieldset select {
   border: 1px solid #999;
   border-right-color: #ddd;
   border-bottom-color: #ddd;
@@ -381,36 +381,36 @@ a.hover-box:hover img.hover {
   background-color: #fff;
 }
 
-#main input.small {
+fieldset input.small {
   width: 120px;
 }
 
-#main input[type=text]:focus,
-#main input[type=password]:focus,
-#main input.text:focus,
-#main textarea:focus,
-#main select:focus {
+fieldset input[type=text]:focus,
+fieldset input[type=password]:focus,
+fieldset input.text:focus,
+fieldset textarea:focus,
+fieldset select:focus {
   border-color: #666;
 }
 
-#main textarea {
+fieldset textarea {
   height: 175px;
 }
 
-#main span.radcheck {
+fieldset span.radcheck {
   display: block;
 }
 
-#main span.radcheck input {
+fieldset span.radcheck input {
   margin: 0 2px 0 0;
 }
 
-#main select { /* Dropdown width and padding is inconsistent with regular inputs */
+fieldset select { /* Dropdown width and padding is inconsistent with regular inputs */
   width: 300px;
   padding: 2px;
 }
 
-#main input.submit { /* Text based input button */
+fieldset input.submit { /* Text based input button */
   padding: 5px 10px;
   border: 1px solid #a2adb4;
   -webkit-border-radius: 5px;
@@ -421,8 +421,8 @@ a.hover-box:hover img.hover {
 }
 
 
-#main input.submit-button,
-#main input[type="image"] { /* Image based input button */
+fieldset input.submit-button,
+fieldset input[type="image"] { /* Image based input button */
   float: left;
 }
 
@@ -430,7 +430,7 @@ a.hover-box:hover img.hover {
     /* =Fieldsets
 ------------------------------------------------------------ */
 
-#main fieldset legend {
+fieldset legend {
   font-size: 14px;
   font-weight: bold;
   padding-bottom: 18px;
@@ -440,24 +440,24 @@ a.hover-box:hover img.hover {
       /* =Pulled Labels
 ------------------------------------------------------------ */
 
-#main fieldset.pulled p {
+fieldset.pulled p {
   padding: 0 0 15px 150px;
   position: relative;
   clear: left;
   zoom: 1; /* Fixes and IE bug that causes text to jump that has a negative margin */
 }
 
-#main fieldset.pulled p label {
+fieldset.pulled p label {
   line-height: normal; /* Used to normalize the height between labels and inputs in Firefox */
 }
 
-#main fieldset.pulled p label.inner { /* Be sure to mirror the padding and borders of inputs to have a consistent height */
+fieldset.pulled p label.inner { /* Be sure to mirror the padding and borders of inputs to have a consistent height */
   display: inline-block;
   position: relative;
   padding: 4px 0;
 }
 
-#main fieldset.pulled p label.outer {
+fieldset.pulled p label.outer {
   float: left;
   text-align: right;
   width: 140px;
@@ -465,15 +465,15 @@ a.hover-box:hover img.hover {
   margin-left: -150px;
 }
 
-#main fieldset.pulled p label sup { /* Used to indicate a required field */
+fieldset.pulled p label sup { /* Used to indicate a required field */
   color: #f00;
 }
 
-#main fieldset.pulled p em.info {
+fieldset.pulled p em.info {
   padding-left: 10px;
 }
 
-#main fieldset.pulled span.error {
+fieldset.pulled span.error {
   position: absolute;
   left: 460px; /* Width of label (150) + input (300) + 10 pixels of space */
   top: 0;
