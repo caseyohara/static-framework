@@ -1,0 +1,42 @@
+@mixin fieldset-base
+  fieldset legend
+    font-size: 14px
+    font-weight: bold
+    padding-bottom: 18px
+
+@mixin fieldset-pulled
+  fieldset.pulled p
+    padding: 0 0 15px 150px
+    position: relative
+    clear: left
+    zoom: 1 
+
+  fieldset.pulled p label
+    line-height: normal 
+
+  fieldset.pulled p label.inner 
+    display: inline-block
+    position: relative
+    padding: 4px 0
+
+  fieldset.pulled p label.outer
+    float: left
+    text-align: right
+    width: 140px
+    padding: 4px 0
+    margin-left: -150px
+
+  fieldset.pulled p label sup 
+    color: #f00
+
+  fieldset.pulled p em.info
+    padding-left: 10px
+
+  fieldset.pulled span.error
+    position: absolute
+    left: 460px 
+    top: 0
+    display: block
+    color: #f00
+    padding: 4px 0
+    line-height: normal
