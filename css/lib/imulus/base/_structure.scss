@@ -1,0 +1,31 @@
+@mixin html-structure {
+  html {
+    font: $font-size/normal $font-stack;
+    color: $font-color;
+    background: $html-background;
+    overflow-y: scroll;
+  }
+}
+
+@mixin body-fixed-width($body-width) {
+  body {
+    position: relative;
+    background: $body-background;
+    width: $body-width;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+}
+
+@mixin body-full-width($container-width) {
+  body {
+    position: relative;
+    width: 100%;
+    line-height: 1.5;
+  }
+
+  .wrapper {
+    width: $container-width;
+    margin: 0 auto;
+  }  
+}

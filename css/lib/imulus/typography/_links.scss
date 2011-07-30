@@ -1,0 +1,14 @@
+@mixin link-styles {
+  a {
+    color: fuchsia;
+  }
+  
+  a:visited {
+    color: fuchsia;
+  }
+  
+  a:hover {
+    color: red;
+    text-decoration: none;
+  }
+}
