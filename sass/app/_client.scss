@@ -1,0 +1,221 @@
+// Global Variables
+
+$font-stack      : "Helvetica Neue", Arial, Helvetica, sans-serif;
+$font-size       : 12px;
+$font-color      : #555;
+$html-background : #fff;
+$body-background : #fff;
+
+
+/* =Initial Page Structure
+---------------------------------------------------------------------------- */
+
+@include global-reset;
+@include imulus-reset;
+@include html-structure;
+@include body-fixed-width(960px);
+
+
+/* =Basic Element Styles
+---------------------------------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+#main h2, #main h3, #main h4, #main h5, #main h6 {
+  padding-top: 5px;
+}
+
+h1 {
+  font-size: $font-size * 1.75;
+}
+#main h1 {
+  color: #55251F;
+}
+
+h2 {
+  font-size: $font-size * 1.5;
+}
+#main h2 {
+  color: #35551C;
+}
+
+h3 {
+  font-size: $font-size * 1.25;
+}
+#main h3 {
+  color: #184C99;
+}
+
+h4 {
+  font-size: $font-size;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: $font-size;
+  font-weight: bold;
+}
+
+h6 {
+  font-size: $font-size;
+  font-weight: bold;
+}
+
+p {
+  padding-bottom: 15px;
+}
+
+sub, sup { /* Position subscript and superscript content without affecting line-height: gist.github.com/413930 */
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+#main blockquote {
+  padding: 0 20px 0 30px;
+  font-style: italic;
+  color: #666;
+}
+
+.spacer {
+  padding-top: 15px;
+}
+
+input,
+textarea,
+select {
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  line-height: normal; /* Used to normalize the height between labels and inputs in Firefox */
+  font-size: 12px;
+  color: #222;
+}
+
+/* You have to specify each browser individually, because they will ignore rules with unknown selectors: bit.ly/ga3vXh */
+input.inactive                   { color: #a9a9a9; }
+input::-webkit-input-placeholder { color: #a9a9a9; }
+input:-moz-placeholder           { color: #a9a9a9; }
+
+img,
+a img {
+  border: 0;
+  vertical-align: middle;
+}
+
+a {
+  color: #f0f;
+}
+
+a:visited {
+  color: #f0f;
+}
+
+a:hover {
+  color: #f00;
+  text-decoration: none;
+}
+
+@include fieldset-base;
+@include fieldset-pulled;
+
+
+/* =Header
+---------------------------------------------------------------------------- */
+
+#header {
+  position: relative;
+
+  strong.logo {
+    position: relative;
+    float: left;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      font-size: 18px;
+    }
+  }
+}
+
+
+/* =Search
+---------------------------------------------------------------------------- */
+
+#search {
+  position: relative;
+  float: right;
+  background: url('/images/layout/header/search-bg.png') left top no-repeat;
+
+  input {
+    vertical-align: middle;
+
+    &#search-text {
+      width: 165px;
+      margin: 0 3px 0 0;
+      padding: 0 5px;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+}
+
+
+/* =Navigation
+---------------------------------------------------------------------------- */
+
+#nav {
+  clear: both;
+  padding: 0 0 30px 0;
+
+  ul li {
+    position: relative;
+    float: left;
+    padding: 0 20px 0 0;
+  }
+}
+
+
+/* =Content
+---------------------------------------------------------------------------- */
+
+#content {
+  position: relative;
+
+  #main {
+    @include fancy-bullets;
+    @include ordered-list;
+    @include code-styles;
+    @include zebra-stripe(#eee, #fff, #c3d9ff);
+  }
+
+  #sidebar {
+    
+  }
+}  
+
+
+/* =Footer
+---------------------------------------------------------------------------- */
+
+#footer {
+  clear: both;
+  position: relative;  
+}
+
+
+// External Imports
+
+@import "client/ie";
+@import "client/print";
