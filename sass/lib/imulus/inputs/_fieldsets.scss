@@ -68,7 +68,8 @@
 @mixin fieldset-pulled {
   fieldset.pulled {
     p {
-      padding: 0 0 15px 150px;
+      margin-bottom: 10px;
+      padding: 0 0 0 150px;
       position: relative;
       clear: left;
       zoom: 1;
