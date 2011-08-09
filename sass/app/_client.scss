@@ -84,8 +84,12 @@ a:hover {
   text-decoration: none;
 }
 
-@include fieldset-base;
-@include fieldset-pulled;
+//@include fieldset-base;
+//@include fieldset-pulled;
+
+fieldset {
+  @include formalize;
+}
 
 
 /* =Header
