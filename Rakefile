@@ -17,7 +17,7 @@ namespace :sass do
   config = {}
 
   task :configure do
-    config[:input]  = 'src/stylesheets/application.sass'
+    config[:input]  = 'src/stylesheets/style.scss'
     config[:output] = 'wwwroot/css/style.css'
     config[:style]  = 'nested'
 
