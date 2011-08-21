@@ -83,6 +83,10 @@
 
         input {
           border-color: #c87872;
+
+          &:focus {
+            @include box-shadow(#c87872 0 0 5px);
+          }
         }
       }
 
