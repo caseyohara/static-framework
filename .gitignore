@@ -5,4 +5,5 @@
 Thumbs.db
 
 .sass-cache
-css/style.css
+wwwwroot/css/style.css
+wwwroot/scripts/scripts.js
