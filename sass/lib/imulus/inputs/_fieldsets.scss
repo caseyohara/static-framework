@@ -87,20 +87,20 @@
       }
 
       label {
+        display: inline-block;
+        padding: 4px 0;
         line-height: normal;
       }
 
       label.inner {
-        display: inline-block;
         position: relative;
-        padding: 4px 0;
       }
 
       label.outer {
+        display: block;
         float: left;
         text-align: right;
         width: 140px;
-        padding: 4px 0;
         margin-left: -150px;
       }
 
