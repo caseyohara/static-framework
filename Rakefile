@@ -26,7 +26,6 @@ namespace :sass do
     end
   end
 
-
   desc "Compile Sass from source"
   task :build => :configure do
     sh "sass #{config[:input]}:#{config[:output]} --style #{config[:style]}"
