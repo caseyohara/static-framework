@@ -1,184 +1,51 @@
 // Global Variables
 
-$font-stack      : "Helvetica Neue", Arial, Helvetica, sans-serif;
-$font-size       : 12px;
-$font-color      : #555;
+
+// Site Styles
+
 $html-background : #fff;
 $body-background : #fff;
 
 
-/* =Initial Page Structure
----------------------------------------------------------------------------- */
+// Font Styles
 
-@include global-reset;
-@include imulus-reset;
-@include html-structure;
-@include body-fixed-width(960px);
-
-
-/* =Basic Element Styles
----------------------------------------------------------------------------- */
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
-}
-
-p {
-  padding-bottom: 18px;
-}
-
-sub, sup { /* Position subscript and superscript content without affecting line-height: gist.github.com/413930 */
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-}
-
-sup {
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-#main blockquote {
-  padding: 0 20px 0 30px;
-  font-style: italic;
-  color: #666;
-}
-
-.spacer {
-  padding-bottom: 18px;
-}
-
-input,
-textarea,
-select {
-  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-  line-height: normal; /* Used to normalize the height between labels and inputs in Firefox */
-  font-size: 12px;
-  color: #222;
-}
-
-/* You have to specify each browser individually, because they will ignore rules with unknown selectors: bit.ly/ga3vXh */
-input.inactive                   { color: #a9a9a9; }
-input::-webkit-input-placeholder { color: #a9a9a9; }
-input:-moz-placeholder           { color: #a9a9a9; }
-
-img,
-a img {
-  border: 0;
-  vertical-align: middle;
-}
-
-a {
-  color: #f0f;
-}
-
-a:visited {
-  color: #f0f;
-}
-
-a:hover {
-  color: #f00;
-  text-decoration: none;
-}
-
-//@include fieldset-base;
-//@include fieldset-pulled;
-
-fieldset {
-  @include formalize;
-}
+$sans-serif      : "Helvetica Neue", Arial, Helvetica, sans-serif;
+$serif           : "Georgia", "Times New Roman", Times, serif;
+$monospace       : "Andale Mono", "Lucida Console", monospace;
+$font-size       : 13px;
+$baseline        : 18px;
+$font-color      : #555;
 
 
-/* =Header
----------------------------------------------------------------------------- */
+// Links
 
-#header {
-  position: relative;
-
-  strong.logo {
-    position: relative;
-    float: left;
-
-    a {
-      display: block;
-      width: 100%;
-      height: 100%;
-      font-size: 18px;
-    }
-  }
-}
+$link-color      : #0069d6;
+$link-hover      : darken($link-color, 15);
 
 
-/* =Search
----------------------------------------------------------------------------- */
+// Grays
 
-#search {
-  position: relative;
-  float: right;
-  background: url('/images/layout/header/search-bg.png') left top no-repeat;
-
-  input {
-    vertical-align: middle;
-
-    &#search-text {
-      width: 165px;
-      margin: 0 3px 0 0;
-      padding: 0 5px;
-
-      &:focus {
-        outline: 0;
-      }
-    }
-  }
-}
+$black           : #000;
+$white           : #fff;
+$grey-dark       : lighten($black, 25%);
+$grey-mid        : lighten($black, 50%);
+$grey-light      : lighten($black, 75%);
+$off-white       : lighten($black, 90%);
 
 
-/* =Navigation
----------------------------------------------------------------------------- */
+// Accent Colors
 
-#nav {
-  clear: both;
-  padding: 0 0 30px 0;
-
-  ul li {
-    position: relative;
-    float: left;
-    padding: 0 20px 0 0;
-  }
-}
+$blue            : #049CDB;
+$green           : #46a546;
+$red             : #9d261d;
+$yellow          : #ffc40d;
+$orange          : #f89406;
+$pink            : #c3325f;
+$purple          : #7a43b6;
 
 
-/* =Content
----------------------------------------------------------------------------- */
+// Import Partials
 
-#content {
-  position: relative;
-
-  #main {
-    @include lists;
-    @include code-styles;
-    @include zebra-stripe(#eee, #fff, #c3d9ff);
-  }
-
-  #sidebar {
-    
-  }
-}
-
-
-/* =Footer
----------------------------------------------------------------------------- */
-
-#footer {
-  clear: both;
-  position: relative;  
-}
-
-
-// External Imports
-
+@import "client/screen";
 @import "client/ie";
 @import "client/print";

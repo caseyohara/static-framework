@@ -1,7 +1,45 @@
-@mixin fancy-bullets {
+@mixin lists {
+  ul,
+  ol {
+    margin: 0 0 $baseline 25px;
+  }
+
+  ul ul,
+  ul ol,
+  ol ol,
+  ol ul {
+    margin-bottom: 0;
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  li {
+    line-height: $baseline;
+  }
+}
+
+@mixin unstyled-lists {
+  ul,
+  ol,
+  ul ul,
+  ul ol,
+  ol ol,
+  ol ul {
+    list-style: none;
+    margin-left: 0;
+  }
+}
+
+@mixin fancy-lists {
   ul {
     padding: 0 0 10px 15px;
-  
+
     li {
       padding: 0 0 5px 15px;
       background: url("/images/icons/bullet.png") left 5px no-repeat;
@@ -18,25 +56,27 @@
   }
 }
 
-@mixin lists {
-  li {
-    ul,
-    ol {
-      margin: 0;
+@mixin inline-lists {
+  ul {
+    float: left;
+
+    li {
+      float: left;
     }
   }
+}
 
-  ul,
-  ol {
-    margin: 0 18px 18px 0;
-    padding-left: 18px;
-  }
-
-  ul {
-    list-style-type: disc;
-  }
-
-  ol {
-    list-style-type: decimal;
+@mixin definition-lists {
+  dl {
+    margin-bottom: $baseline;
+    dt, dd {
+      line-height: $baseline;
+    }
+    dt {
+      font-weight: bold;
+    }
+    dd {
+      margin-left: $baseline / 2;
+    }
   }
 }
