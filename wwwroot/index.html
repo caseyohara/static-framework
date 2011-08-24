@@ -151,39 +151,36 @@
           <fieldset class="pulled">
             <legend>Sign up for a new account</legend>
 
-            <div class="input">
+            <div class="row">
               <label class="outer" for="first-name">First Name</label>
-              <input name="first-name" id="first-name" type="text" class="text" />
+              <input name="first-name" id="first-name" type="text" class="text input_medium" />
+              <label class="inner" for="last-name">Last Name</label>
+              <input name="last-name" id="last-name" type="text" class="text input_medium" />
             </div>
 
-            <div class="input">
-              <label class="outer" for="last-name">Last Name</label>
-              <input name="last-name" id="last-name" type="text" class="text" disabled="disabled" />
-            </div>
-
-            <div class="input">
+            <div class="row">
               <label class="outer" for="company">Company</label>
-              <input name="company" id="company" type="text" />
+              <input name="company" id="company" type="text" class="text input_xlarge" />
             </div>
 
-            <div class="input error">
+            <div class="row required error">
               <label class="outer" for="title">Title</label>
-              <input name="title" id="title" type="text" />
+              <input name="title" id="title" type="text" class="text input_xlarge" />
             </div>
 
-            <div class="input">
+            <div class="row">
               <label class="outer" for="email-address">Email Address</label>
-              <input name="email-address" id="email-address" type="text" />
+              <input name="email-address" id="email-address" type="text" class="text input_xlarge" />
             </div>
 
-            <div class="input">
+            <div class="row">
               <label class="outer" for="phone-number">Phone Number</label>
-              <input name="phone-number" id="phone-number" type="text" />
+              <input name="phone-number" id="phone-number" type="text" class="text input_xlarge" />
             </div>
 
-            <div class="input">
+            <div class="row">
               <label class="outer" for="dropdown">Ottawa</label>
-              <select id="dropdown" name="dropdown">
+              <select id="dropdown" name="dropdown" class="input_xlarge">
                 <option value="1">Ottawa</option>
                 <option value="2">Calgary</option>
                 <option value="3">Moosejaw</option>
@@ -191,9 +188,9 @@
             </div>
 
 
-            <div class="input">
+            <div class="row">
               <label class="outer" for="select_multi">Select Multiple</label>
-              <select id="select_multi" name="select_multi" multiple="multiple" size="5">
+              <select id="select_multi" name="select_multi" multiple="multiple" size="5" class="input_xlarge">
                 <option value="1">Some text goes here</option>
                 <option value="2">Another choice could be here</option>
                 <option value="3">Yet another item to be chosen</option>
@@ -201,9 +198,9 @@
             </div>
 
 
-            <div class="input">
+            <div class="row">
               <label class="outer" for="select_multi">Select Multiple</label>
-              <select id="select_multi" name="select_multi" multiple="multiple" size="10">
+              <select id="select_multi" name="select_multi" multiple="multiple" size="10" class="input_xlarge">
                 <optgroup label="Group 1">
                   <option value="1">Some text goes here</option>
                   <option value="2">Another choice could be here</option>
@@ -223,104 +220,104 @@
             </div>
 
 
-            <div class="input">
+            <div class="row">
               <label class="outer">Radio buttons</label>
 
-              <label for="radio-example-1">
+              <label class="radcheck" for="radio-example-1">
                 <input type="radio" name="radio-example" id="radio-example-1"/>
                 <span>Radio one</span>
               </label>
 
-              <label for="radio-example-2">
+              <label class="radcheck" for="radio-example-2">
                 <input type="radio" name="radio-example" id="radio-example-2"/>
                 <span>Radio two</span>
               </label>
 
-              <label for="radio-example-3">
+              <label class="radcheck" for="radio-example-3">
                 <input type="radio" name="radio-example" id="radio-example-3"/>
                 <span>Radio three</span>
               </label>
             </div>
 
-            <div class="input">
+            <div class="row">
               <label class="outer">Checkboxes</label>
-              <label for="checkbox-example-1">
+              <label class="radcheck" for="checkbox-example-1">
                 <input type="checkbox" name="checkbox-example" id="checkbox-example-1"/>
                 <span>Checkbox one</span>
               </label>
 
-              <label for="checkbox-example-2">
+              <label class="radcheck" for="checkbox-example-2">
                 <input type="checkbox" name="checkbox-example" id="checkbox-example-2"/>
                 <span>Checkbox two</span>
               </label>
 
-              <label for="checkbox-example-3">
+              <label class="radcheck" for="checkbox-example-3">
                 <input type="checkbox" name="checkbox-example" id="checkbox-example-3"/>
                 <span>Checkbox three</span>
               </label>
             </div>
 
-            <div class="input">
+            <div class="row">
               <label class="outer" for="comments">Comments</label>
-              <textarea name="comments" id="comments" rows="5"></textarea>
+              <textarea name="comments" id="comments" rows="5" class="input_xlarge"></textarea>
             </div>
 
-            <div class="input">
+            <div class="row">
               <label class="outer" for="url">URL + Autofocus</label>
-              <input type="url" id="url" name="url" value="http://" autofocus="autofocus" />
+              <input type="url" id="url" name="url" value="http://" autofocus="autofocus" class="input_xlarge" />
             </div>
 
-            <div class="input">
+            <div class="row">
               <label class="outer" for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="name@example.com" />
+              <input type="email" id="email" name="email" placeholder="name@example.com" class="input_xlarge" />
             </div>
 
-            <div class="input">
+            <div class="row">
               <label class="outer" for="datetime-local">Datetime local</label>
-              <input type="datetime-local" id="datetime-local" name="datetime-local" />
+              <input type="datetime-local" id="datetime-local" name="datetime-local" class="input_xlarge" />
             </div>
 
-            <div class="input">
+            <div class="row">
               <label class="outer" for="number">Number</label>
-              <input type="number" id="number" name="number" min="0" max="999" step="1" />
+              <input type="number" id="number" name="number" min="0" max="999" step="1" class="input_xlarge" />
             </div>
 
-            <div class="input">
+            <div class="row">
               <label class="outer" for="tel">Tel (phone)</label>
-              <input type="tel" id="tel" name="tel" />
+              <input type="tel" id="tel" name="tel" class="input_xlarge" />
             </div>
 
-            <div class="input">
+            <div class="row">
               <label class="outer" for="datetime">Datetime</label>
-              <input type="datetime" id="datetime" name="datetime" />
+              <input type="datetime" id="datetime" name="datetime" class="input_xlarge" />
             </div>
 
-            <div class="input">
+            <div class="row">
               <label class="outer" for="date">Date</label>
-              <input type="date" id="date" name="date" />
+              <input type="date" id="date" name="date" class="input_xlarge" />
             </div>
 
-            <div class="input">
+            <div class="row">
               <label class="outer" for="month">Month</label>
-              <input type="month" id="month" name="month" />
+              <input type="month" id="month" name="month" class="input_xlarge" />
             </div>
 
-            <div class="input">
+            <div class="row">
               <label class="outer" for="search">Search</label>
-              <input type="search" id="search-q" name="search" />
+              <input type="search" id="search-q" name="search" class="input_xlarge" />
             </div>
 
-            <div class="input">
+            <div class="row">
               <label class="outer" for="range">Range</label>
-              <input type="range" id="range" name="range" />
+              <input type="range" id="range" name="range" class="input_xlarge" />
             </div>
 
-            <div class="input">
+            <div class="row">
               <label class="outer" for="file">File upload</label>
-              <input type="file" id="file" name="file" />
+              <input type="file" id="file" name="file" class="input_xlarge" />
             </div>
 
-            <div class="input">
+            <div class="row">
               <input type="submit" value="Input - Submit" />
               <input type="button" value="Input - Button" />
               <input type="reset" value="Input - Reset" />
@@ -343,7 +340,25 @@
     </div><!-- end footer -->
   </div><!-- end wrapper -->
 
-  <!-- JavaScript -->
-  <script src="/scripts/scripts.js"></script>
+  <!-- jQuery -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write("<script src='/scripts/jquery/jquery-1.6.2.min.js'>\x3C/script>")</script>
+
+  <!-- jQuery Plugins -->
+  <script src="/scripts/jquery/plugins/jquery.cookie.js"></script>
+  <script src="/scripts/jquery/plugins/jquery.cycle.all.min.js"></script>
+  <script src="/scripts/jquery/plugins/jquery.query.js"></script>
+  <script src="/scripts/jquery/plugins/jquery.formalize.min.js"></script>
+
+  <!-- SWFObject -->
+  <script src="/scripts/library/swfobject.js"></script>
+
+  <!-- Imulus JS -->
+  <script src="/scripts/imulus/imulus.namespace.js"></script>
+  <script src="/scripts/imulus/imulus.library.js"></script>
+  <script src="/scripts/imulus/imulus.interface.js"></script>
+
+  <!-- Giddy Up -->
+  <script src="/scripts/init.js"></script>
 </body>
 </html>
