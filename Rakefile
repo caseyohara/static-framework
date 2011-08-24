@@ -2,61 +2,44 @@
 
 require 'rubygems'
 require 'coyote'
+require 'yaml'
 
-task :default => :build
+config  = YAML.load(File.open(File.expand_path(File.dirname(__FILE__) + "/config/config.yaml")))
+@sass   = config['sass']
+@js     = config['js'] 
+
 
 desc "Compile both Sass and JavaScript source files"
-task :build, :environment do |task, args|
-  @environment = args[:environment] || 'development'
-  Rake::Task["js:build"].invoke
-  Rake::Task["sass:build"].invoke
-end
+task :build => ['js:build','sass:build']
 
 
 namespace :sass do
-  config = {}
-
-  task :configure do
-    config[:input]  = 'src/stylesheets/style.scss'
-    config[:output] = 'wwwroot/css/style.css'
-    config[:style]  = 'nested'
-
-    if @environment == 'production'
-      config[:style] = 'compress'
-    end
-  end
-
   desc "Compile Sass from source"
-  task :build => :configure do
-    sh "sass #{config[:input]}:#{config[:output]} --style #{config[:style]}"
+  task :build do
+    sh "sass #{@sass['input_dir']}/#{@sass['input_file']}:#{@sass['output_dir']}/#{@sass['output_file']} --style #{@sass['style']}"
   end
 
   desc "Watch Sass source files for changes and recompile automatically"
-  task :watch => :configure do
-    sh "sass #{config[:input]}:#{config[:output]} --style #{config[:style]} --watch"
+  task :watch do
+    sh "sass #{@sass['input_dir']}:#{@sass['output_dir']} --style #{@sass['style']} --watch"
   end
 end
 
 
 namespace :js do
   config = Coyote::Configuration.new
-
-  task :configure do
-    config.inputs = ['src/javascripts/scripts.coffee']
-    config.output = "wwwroot/scripts/scripts.js"
-    config.options['verbose'] = true
-    if @environment == 'production'
-      config.options['compress'] = true
-    end
-  end
+  config.inputs = @js['input']
+  config.output = @js['output']
+  config.options['compress'] = @js['compress']
+  config.options['verbose'] = @js['verbose']
 
   desc "Compile JavaScript and CoffeeScript from source"
-  task :build => :configure do
+  task :build do
     Coyote::build config
   end
 
   desc "Watch JS/CS source files for changes and recompile automatically"
-  task :watch => :configure do
+  task :watch do
     Coyote::watch config
   end
 end

@@ -1,0 +1,12 @@
+js:
+  output      : 'wwwroot/scripts/scripts.js'
+  input       : 'src/javascripts/scripts.coffee'
+  compress    : false
+  verbose     : true
+
+sass: 
+  input_dir   : 'src/stylesheets'
+  input_file  : 'style.scss'
+  output_dir  : 'wwwroot/css'
+  output_file : 'style.css'
+  style       : 'nested'
