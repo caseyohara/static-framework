@@ -1,0 +1,242 @@
+
+/* =Initial Page Structure
+---------------------------------------------------------------------------- */
+
+@include global-reset;
+@include imulus-reset;
+
+html {
+  @include html-structure;
+}
+
+body {
+  position: relative;
+  line-height: $baseline;
+  background: $body-background;
+}
+
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+
+/* =Basic Element Styles
+---------------------------------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: $grey-dark;
+  small {
+    color: $grey-dark;
+  }
+}
+
+h1 {
+  margin-bottom: $baseline;
+  font-size: 30px;
+  line-height: $baseline * 2;
+  small {
+    font-size: 18px;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  line-height: $baseline * 2;
+  small {
+    font-size: 14px;
+  }
+}
+
+h3, h4, h5, h6 {
+  line-height: $baseline * 2;
+}
+
+h3 {
+  font-size: 18px;
+  small {
+    font-size: 14px;
+  }
+}
+
+h4 {
+  font-size: 16px;
+  small {
+    font-size: 12px;
+  }
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 13px;
+  color: $grey-dark;
+  text-transform: uppercase;
+}
+
+p {
+  margin-bottom: $baseline;
+}
+
+blockquote {
+  margin-bottom: $baseline;
+  border-left: 5px solid #eee;
+  padding-left: 15px;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  small, cite {
+    display: block;
+    color: $grey-light;
+
+    &:before {
+      content: '\2014 \00A0';
+    }
+  }
+}
+
+address {
+  display: block;
+  line-height: $baseline;
+  margin-bottom: $baseline;
+}
+
+pre, code {
+  font-family: $monospace;
+  font-size: 12px;
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin-bottom: $baseline;
+}
+
+sub, sup { /* Position subscript and superscript content without affecting line-height: gist.github.com/413930 */
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+.spacer {
+  padding-bottom: $baseline;
+}
+
+img,
+a img {
+  border: 0;
+  vertical-align: middle;
+}
+
+a {
+  @include link-colors($link-color, $link-hover);
+  @include link-underlines(underline, none);
+}
+
+#test {
+  @include opacity(50);
+}
+
+
+/* =Header
+---------------------------------------------------------------------------- */
+
+#header {
+  position: relative;
+
+  strong.logo {
+    position: relative;
+    float: left;
+
+    a {
+      display: block;
+      //@include image-replacement('/images/logo.gif', 163px, 99px)
+    }
+  }
+}
+
+
+/* =Search
+---------------------------------------------------------------------------- */
+
+#search {
+  position: relative;
+  float: right;
+  background: url('/images/layout/header/search-bg.png') left top no-repeat;
+  width: image-width('/images/layout/header/search-bg.png');
+
+  input {
+    vertical-align: middle;
+
+    &#search-text {
+      width: 165px;
+      margin: 0 3px 0 0;
+      padding: 0 5px;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+}
+
+
+/* =Navigation
+---------------------------------------------------------------------------- */
+
+#nav {
+  clear: both;
+  padding: 0 0 30px 0;
+
+  @include inline-lists;
+
+  ul li {
+    margin-right: 5px;
+  }
+
+  ul li a {
+    display: block;
+    padding: 5px 10px;
+    background: #ddd;
+    text-decoration: none;
+  }
+}
+
+
+/* =Content
+---------------------------------------------------------------------------- */
+
+#content {
+  position: relative;
+
+  #main {
+    @include lists;
+  }
+
+  #sidebar {
+
+  }
+}
+
+
+/* =Footer
+---------------------------------------------------------------------------- */
+
+#footer {
+  clear: both;
+  position: relative;
+}

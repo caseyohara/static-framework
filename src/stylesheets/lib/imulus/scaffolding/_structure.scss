@@ -1,0 +1,6 @@
+@mixin html-structure {
+  font: $font-size/normal $sans-serif;
+  color: $font-color;
+  background: $html-background;
+  overflow-y: scroll;
+}

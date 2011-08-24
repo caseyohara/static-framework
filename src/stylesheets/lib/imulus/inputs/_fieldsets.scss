@@ -1,0 +1,141 @@
+//@mixin fieldset-base {
+//  fieldset {
+//    legend {
+//      font-size: 14px;
+//      font-weight: bold;
+//      padding-bottom: 18px;
+//    }
+//
+//    input[type=text],
+//    input[type=password],
+//    input.text,
+//    textarea,
+//    select {
+//      border: 1px solid #999999;
+//      border-right-color: #dddddd;
+//      border-bottom-color: #dddddd;
+//      width: 292px;
+//      padding: 3px;
+//      background-color: white;
+//    }
+//
+//    input.small {
+//      width: 120px;
+//    }
+//
+//    input[type=text]:focus,
+//    input[type=password]:focus,
+//    input.text:focus,
+//    textarea:focus,
+//    select:focus {
+//      border-color: #666666;
+//    }
+//
+//    textarea {
+//      height: 175px;
+//    }
+//
+//    span.radcheck {
+//      display: block;
+//    }
+//
+//    span.radcheck input {
+//      margin: 0 2px 0 0;
+//    }
+//
+//    select {
+//      width: 300px;
+//      padding: 2px;
+//    }
+//
+//    input.submit {
+//      padding: 5px 10px;
+//      border: 1px solid #a2adb4;
+//      -webkit-border-radius: 5px;
+//      -moz-border-radius: 5px;
+//      border-radius: 5px;
+//      background: #d9e3e9;
+//      color: #3e6d95;
+//    }
+//
+//    input.submit-button,
+//    input[type="image"] {
+//      float: left;
+//    }
+//  }
+//}
+
+  fieldset.pulled {
+    .row {
+      margin: 5px 0;
+      padding: 5px 0 5px 150px;
+      position: relative;
+      clear: left;
+      zoom: 1;
+
+      &.required label:after {
+        content: ' *';
+        color: #f00;
+      }
+
+      &.error {
+        background: #fae5e3;
+        @include border-radius(5px);
+
+        label {
+          color: #a5251d;
+        }
+
+      input {
+        border-color: #c87872;
+
+        &:focus {
+          @include box-shadow(#c87872 0 0 5px);
+        }
+      }
+    }
+
+    label {
+      display: inline-block;
+      padding: 7px 0;
+      line-height: normal;
+
+      &.inner {
+        position: relative;
+        display: inline;
+        vertical-align: middle;
+      }
+
+      &.outer {
+        display: block;
+        float: left;
+        text-align: right;
+        width: 140px;
+        margin-left: -150px;
+      }
+
+      &.radcheck {
+        display: block;
+        padding: 7px 0 0 0;
+      }
+
+      sup {
+        color: red;
+      }
+    }
+
+    em.info {
+      padding-left: 10px;
+    }
+  }
+
+  span.error {
+    position: absolute;
+    left: 460px;
+    top: 0;
+    display: block;
+    color: red;
+    padding: 4px 0;
+    line-height: normal;
+  }
+}

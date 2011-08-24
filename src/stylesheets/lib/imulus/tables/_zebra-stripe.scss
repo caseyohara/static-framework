@@ -1,0 +1,31 @@
+@mixin zebra-stripe($even-row-color, $odd-row-color, $header-color: white) {
+  table {
+    width: 100%;
+    margin-bottom: 15px;
+      
+    th {
+      font-weight: bold;
+      text-align: left;
+      background: $header-color;
+    }
+  
+    th,
+    td {
+      padding: 5px 10px 5px 5px;
+      border: 1px solid #999999;
+    }
+  
+    td {
+      background: $odd-row-color;
+    }
+  
+    tbody tr:nth-child(even) td,
+    tbody tr.even td {
+      background: $even-row-color;
+    }
+  
+    tfoot {
+      font-style: italic;
+    }
+  }
+}
