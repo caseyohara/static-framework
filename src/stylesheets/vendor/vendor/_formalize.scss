@@ -1,56 +1,10 @@
 fieldset {
 
-  /* `Widths
-  ----------------------------------------------------------------------------------------------------*/
 
-  .input_tiny {
-    width: 50px;
-  }
 
-  .input_small {
-    width: 100px;
-  }
 
-  .input_medium {
-    width: 150px;
-  }
 
-  .input_large {
-    width: 200px;
-  }
-
-  .input_xlarge {
-    width: 250px;
-  }
-
-  .input_xxlarge {
-    width: 300px;
-  }
-
-  .input_full {
-    width: 100%;
-  }
-
-  /*
-    Added via JS to <textarea> and class="input_full".
-    Applies only to IE7. Other browsers don't need it.
-  */
-  .input_full_wrap {
-    display: block;
-    padding-right: 8px;
-  }
-
-  /* `UI Consistency
-  ----------------------------------------------------------------------------------------------------*/
-
-  ::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-  }
-
-  input[type="search"]::-webkit-search-decoration {
-    display: none;
-  }
+  // Reset
 
   input,
   button,
@@ -69,6 +23,21 @@ fieldset {
     top: 0\0;
     /* IE7 */
     *top: -3px;
+  }
+
+  ::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  input[type="search"]::-webkit-search-decoration {
+    display: none;
+  }
+
+  :invalid {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
   }
 
   /* iPad */
@@ -189,11 +158,12 @@ select {
   padding-left: 5px;
 }
 
-  /*
-    Separate rule for Firefox.
-    Separate rule for IE, too.
-    Cannot stack with WebKit's.
-  */
+
+
+
+
+  // Placeholders
+
   ::-webkit-input-placeholder {
     color: #888;
   }
@@ -208,16 +178,10 @@ select {
     color: #888;
   }
 
-  :invalid {
-    /*
-      Suppress red glow that Firefox
-      adds to form fields by default,
-      even when user is still typing.
-    */
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
+
+
+
+
 
   button:focus,
   button:active,
@@ -231,8 +195,6 @@ select {
     -moz-box-shadow: #2290bc 0 0 5px;
     -webkit-box-shadow: #2290bc 0 0 5px;
     box-shadow: #2290bc 0 0 5px;
-
-    /* for Opera */
     z-index: 1;
   }
 
@@ -277,8 +239,8 @@ select {
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
-    color: #888;
     cursor: default;
+    color: #888;
   }
 
   textarea,
@@ -286,6 +248,10 @@ select {
   select[multiple] {
     height: auto;
   }
+
+
+
+
 
   /* Tweaks for Safari + Chrome. */
   @media (-webkit-min-device-pixel-ratio: 0) {
@@ -336,73 +302,35 @@ select {
     font-weight: normal;
   }
 
-  /* `IE6
-  ----------------------------------------------------------------------------------------------------*/
 
-  /*
-    Everything below this line is for IE6.
-    Delete it if you don't support it! :)
 
-    Classes are added dynamically via JS,
-    because IE6 doesn't support attribute
-    selectors: .ie6_button, .ie6_input, etc.
 
-    Note: These style rules are somewhat
-    duplicated because IE6 bombs out when
-    it sees attribute selectors. Example:
 
-    .ie6_button {
-      This works in IE6.
-    }
 
-    .ie6_button,
-    input[type=submit] {
-      This doesn't work.
-    }
-  */
 
-  .ie6_button,
-  * html button {
-    background: #ddd url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAAAAADhgtq/AAAAHElEQVQoz2P8z4ADsOCW+UeGnsFs2nDzz5AMHQA+JRlAyyOraAAAAABJRU5ErkJggg==) repeat-x;
-    border: 1px solid;
-    border-color: #ddd #bbb #999;
-    cursor: pointer;
-    color: #333;
-    font: bold 12px/1.2 Arial, sans-serif;
-    padding: 2px 10px 0px;
-    overflow: visible;
-    width: auto;
+
+
+
+
+
+
+
+
+
+
+
+
+  .input_tiny      { width: 50px; }
+  .input_small     { width: 100px; }
+  .input_medium    { width: 150px; }
+  .input_large     { width: 200px; }
+  .input_xlarge    { width: 250px; }
+  .input_xxlarge   { width: 300px; }
+  .input_full      { width: 100%; }
+  .input_full_wrap { // Added via JS to <textarea> and class="input_full". Applies only to IE7
+    display: block;
+    padding-right: 8px;
   }
 
-  * html button {
-    padding-top: 1px;
-    padding-bottom: 1px;
-  }
 
-  .ie6_input,
-  * html textarea,
-  * html select {
-    background: #fff;
-    border: 1px solid;
-    border-color: #848484 #c1c1c1 #e1e1e1;
-    color: #000;
-    padding: 2px 3px 1px;
-    font-size: 13px;
-    font-family: Arial, sans-serif;
-    vertical-align: top;
-  }
-
-  * html select {
-    margin-top: 1px;
-  }
-
-  .placeholder_text,
-  .ie6_input_disabled,
-  .ie6_button_disabled {
-    color: #888;
-  }
-
-  .ie6_input_disabled {
-    background: #eee;
-  }
 }

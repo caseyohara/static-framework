@@ -15,13 +15,19 @@ body {
   background: $body-background;
 }
 
-.wrapper {
+.container {
+  position: relative;
   width: 960px;
   margin: 0 auto;
+  padding: 0;
+  @include autoclear;
 }
 
 
 /* =Basic Element Styles
+---------------------------------------------------------------------------- */
+
+  /* =Headings
 ---------------------------------------------------------------------------- */
 
 h1, h2, h3, h4, h5, h6 {
@@ -77,9 +83,11 @@ h6 {
   text-transform: uppercase;
 }
 
-p {
-  margin-bottom: $baseline;
-}
+
+  /* =Body Text
+---------------------------------------------------------------------------- */
+
+p { margin-bottom: $baseline; }
 
 blockquote {
   margin-bottom: $baseline;
@@ -118,23 +126,36 @@ pre {
   margin-bottom: $baseline;
 }
 
-sub, sup { /* Position subscript and superscript content without affecting line-height: gist.github.com/413930 */
+sub, sup { // Position subscript and superscript content without affecting line-height: gist.github.com/413930
   font-size: 75%;
   line-height: 0;
   position: relative;
 }
 
-sup {
-  top: -0.5em;
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul,
+ol { margin: 0 0 $baseline 25px; }
+
+ul ul,
+ul ol,
+ol ul,
+ol ol { margin-bottom: 0; }
+ul    { list-style: disc; }
+ul ul { list-style: circle; }
+ol    { list-style: decimal; }
+ol ol { list-style: lower-alpha; }
+li    { line-height: $baseline; }
+
+dl {
+  margin-bottom: $baseline;
+  dt, dd { line-height: $baseline; }
+  dt     { font-weight: bold; }
+  dd     { margin-left: $baseline / 2; }
 }
 
-sub {
-  bottom: -0.25em;
-}
-
-.spacer {
-  padding-bottom: $baseline;
-}
+.spacer { margin-bottom: $baseline; }
 
 img,
 a img {
@@ -147,16 +168,13 @@ a {
   @include link-underlines(underline, none);
 }
 
-#test {
-  @include opacity(50);
-}
-
 
 /* =Header
 ---------------------------------------------------------------------------- */
 
 #header {
   position: relative;
+  @include autoclear;
 
   strong.logo {
     position: relative;
@@ -202,17 +220,19 @@ a {
   clear: both;
   padding: 0 0 30px 0;
 
-  @include inline-lists;
+  ul {
+    @include inline-list;
 
-  ul li {
-    margin-right: 5px;
-  }
+    li {
+      margin-right: 5px;
 
-  ul li a {
-    display: block;
-    padding: 5px 10px;
-    background: #ddd;
-    text-decoration: none;
+      a {
+        display: block;
+        padding: 5px 10px;
+        background: #ddd;
+        text-decoration: none;
+      }
+    }
   }
 }
 
@@ -222,9 +242,10 @@ a {
 
 #content {
   position: relative;
-
+  @include autoclear;
+  
   #main {
-    @include lists;
+
   }
 
   #sidebar {
@@ -237,6 +258,7 @@ a {
 ---------------------------------------------------------------------------- */
 
 #footer {
-  clear: both;
+  @include autoclear;
   position: relative;
+  clear: both;
 }

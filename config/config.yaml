@@ -9,4 +9,4 @@ sass:
   input_file  : 'style.scss'
   output_dir  : 'wwwroot/css'
   output_file : 'style.css'
-  style       : 'nested'
+  style       : 'expanded'
