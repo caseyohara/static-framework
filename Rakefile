@@ -9,6 +9,9 @@ config  = YAML.load(File.open(File.expand_path(File.dirname(__FILE__) + "/config
 @js     = config['js'] 
 
 
+desc "Default task :: build it"
+task :default => [:build]
+
 desc "Compile both Sass and JavaScript source files"
 task :build => ['js:build','sass:build']
 
