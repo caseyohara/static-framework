@@ -1,0 +1,74 @@
+#!/usr/bin/env ruby
+
+$: << File.expand_path(File.dirname(__FILE__) + "/../")
+
+require 'rubygems'
+require 'optparse'
+require 'coyote'
+require 'yaml'
+
+@options = {}
+OptionParser.new do |opts|
+  opts.on("-j", "--with-js", "JavaScript") do |option|
+  	@options['js'] = option
+  end
+  opts.on("-s", "--with-css", "css") do |option|
+  	@options['css'] = option
+  end  
+  opts.on("-c", "--compress", "Compress") do |option|
+  	@options['compress'] = option
+  end
+  opts.on("-w", "--watch", "Watch") do |option|
+  	@options['watch'] = option
+  end  
+end.parse!
+
+
+config  = YAML.load(File.open(File.expand_path("build/config.yml")))
+
+settings = @options['compress'] ? config['production'] : config['development']
+
+@css   = settings['css']
+@js    = settings['js']
+
+
+if not @options['js'] and not @options['css']
+  @options['js'] = true
+  @options['css'] = true
+end
+
+
+if @options['js'] and @options['css'] and @options['watch']
+  puts "Cannot watch JavaScript and css at the same time. Terribly sorry. :-("
+  exit 0
+end
+
+
+if @options['js']
+  js = Coyote::Configuration.new
+  js.inputs = @js['input']
+  js.output = @js['output']
+  js.options['compress'] = @js['compress']
+  js.options['verbose'] = @js['verbose']
+
+  if @options['watch']
+    Coyote::watch js
+  else
+    Coyote::build js
+  end
+end
+
+
+if @options['css']
+  if @options['watch']
+    command = "sass #{@css['input_dir']}:#{@css['output_dir']} --style #{@css['style']} --watch"
+  else
+    command = "sass #{@css['input_dir']}/#{@css['input_file']}:#{@css['output_dir']}/#{@css['output_file']} --style #{@css['style']}"    
+  end
+  `#{command}`
+  Coyote::Notification.new "Saved #{@css['output_dir']}/#{@css['output_file']}\n\n", 'success'
+end
+
+
+
+# puts `rake build`

@@ -4,45 +4,33 @@ require 'rubygems'
 require 'coyote'
 require 'yaml'
 
-config  = YAML.load(File.open(File.expand_path(File.dirname(__FILE__) + "/config/config.yaml")))
-@sass   = config['sass']
-@js     = config['js'] 
-
-
 desc "Default task :: build it"
 task :default => [:build]
 
-desc "Compile both Sass and JavaScript source files"
-task :build => ['js:build','sass:build']
+desc "Build both CSS and JavaScript source files, uncompressed"
+task :build => ['js:build','css:build']
 
-
-namespace :sass do
-  desc "Compile Sass from source"
+namespace :css do
+  desc "Compile CSS and SASS from source"
   task :build do
-    sh "sass #{@sass['input_dir']}/#{@sass['input_file']}:#{@sass['output_dir']}/#{@sass['output_file']} --style #{@sass['style']}"
+    sh "build/compile --with-css"
   end
 
-  desc "Watch Sass source files for changes and recompile automatically"
+  desc "Watch CSS source files for changes and recompile automatically"
   task :watch do
-    sh "sass #{@sass['input_dir']}:#{@sass['output_dir']} --style #{@sass['style']} --watch"
+    sh "build/compile --with-css --watch"
   end
 end
 
 
 namespace :js do
-  config = Coyote::Configuration.new
-  config.inputs = @js['input']
-  config.output = @js['output']
-  config.options['compress'] = @js['compress']
-  config.options['verbose'] = @js['verbose']
-
   desc "Compile JavaScript and CoffeeScript from source"
   task :build do
-    Coyote::build config
+    sh "build/compile --with-js"
   end
 
   desc "Watch JS/CS source files for changes and recompile automatically"
   task :watch do
-    Coyote::watch config
+    sh "build/compile --with-css --watch"
   end
 end

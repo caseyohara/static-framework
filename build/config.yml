@@ -1,0 +1,27 @@
+development:
+  js:
+    output      : wwwroot/scripts/scripts.js
+    input       : src/javascripts/scripts.coffee
+    compress    : false
+    verbose     : true
+  css:
+    input_dir   : src/stylesheets
+    input_file  : style.scss
+    output_dir  : wwwroot/css
+    output_file : style.css
+    style       : nested
+
+production:
+  js:
+    output      : wwwroot/scripts/scripts.js
+    input       : src/javascripts/scripts.coffee
+    compress    : true
+    verbose     : false
+  css:
+    input_dir   : src/stylesheets
+    input_file  : style.scss
+    output_dir  : wwwroot/css
+    output_file : style.css
+    style       : compressed    
+
+
