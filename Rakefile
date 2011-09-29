@@ -31,6 +31,6 @@ namespace :js do
 
   desc "Watch JS/CS source files for changes and recompile automatically"
   task :watch do
-    sh "build/compile --with-css --watch"
+    sh "build/compile --with-js --watch"
   end
 end
